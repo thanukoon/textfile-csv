@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Xml.Linq;
+
 
 namespace WpfApp1
 {
@@ -23,6 +26,14 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            using (TextWriter sw = new StreamWriter("E:\\files.csv"))
+            {
+                string strData = "Zaaa";
+                float floatData = 324.563F;//Note it's a float not string
+                sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
+
+            }
         }
+       
     }
 }
