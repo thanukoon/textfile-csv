@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="btn1" Content="YES OR ON" HorizontalAlignment="Left" Margin="212,191,0,0" VerticalAlignment="Top" Width="75"/>
-
+        <Button x:Name="Save" Content="Save" HorizontalAlignment="Left" Margin="129,256,0,0" VerticalAlignment="Top" Width="75" Click="Butt"/>
+        <Button x:Name="No_Save" Content="No Save" HorizontalAlignment="Left" Margin="327,261,0,0" VerticalAlignment="Top" Width="75" Click="Butt1"/>
     </Grid>
 </Window>

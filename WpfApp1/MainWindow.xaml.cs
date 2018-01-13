@@ -26,41 +26,41 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            MessageBoxResult result;
+         }
 
+        private void Butt(object sender, RoutedEventArgs e)
+        {
+            Button n = (Button)sender;
 
-            result = MessageBox.Show("Close Application?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-
-            if (result == MessageBoxResult.Yes)
+            using (TextWriter sw = new StreamWriter("E:\\files.csv"))
             {
-                using (TextWriter sw = new StreamWriter("E:\\files.csv"))
-                {
-                    string strData = "YES";
-                    float floatData = 324.563F;//Note it's a float not string
-                    sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
-                   
-
-
-                }
-
-
+                string strData = "YES";
+                float floatData = 324.563F;//Note it's a float not string
+                sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
             }
-
-            else
-            {
-
-                using (TextWriter sw = new StreamWriter("E:\\files.csv"))
-                {
-                    string strData = "NO";
-                    float floatData = 324.563F;//Note it's a float not string
-                    sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
-
-
-                }
-            }
-
+            this.Close();
         }
-      
-       
+
+        private void Butt1(object sender, RoutedEventArgs e)
+        {
+           
+
+            using (TextWriter sw = new StreamWriter("E:\\files.csv"))
+            {
+                string strData = "No";
+                float floatData = 324.563F;//Note it's a float not string
+                sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
+                
+
+
+            }
+            this.Close();
+        }
     }
+
+
+   
+
+       
 }
+
