@@ -26,14 +26,40 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            using (TextWriter sw = new StreamWriter("E:\\files.csv"))
+            MessageBoxResult result;
+
+
+            result = MessageBox.Show("Close Application?", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
             {
-                string strData = "Zaaa";
-                float floatData = 324.563F;//Note it's a float not string
-                sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
+                using (TextWriter sw = new StreamWriter("E:\\files.csv"))
+                {
+                    string strData = "YES";
+                    float floatData = 324.563F;//Note it's a float not string
+                    sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
+                   
+
+                }
+
 
             }
+
+            else
+            {
+
+                using (TextWriter sw = new StreamWriter("E:\\files.csv"))
+                {
+                    string strData = "NO";
+                    float floatData = 324.563F;//Note it's a float not string
+                    sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
+
+
+                }
+            }
+
         }
+      
        
     }
 }
