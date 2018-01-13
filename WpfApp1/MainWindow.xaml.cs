@@ -40,6 +40,7 @@ namespace WpfApp1
                     sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
                    
 
+
                 }
 
 
