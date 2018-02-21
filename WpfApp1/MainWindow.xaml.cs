@@ -34,7 +34,7 @@ namespace WpfApp1
 
             using (TextWriter sw = new StreamWriter("E:\\files.csv"))
             {
-                string strData = "YES";
+                string strData = "1";
                 float floatData = 324.563F;//Note it's a float not string
                 sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
             }
@@ -47,17 +47,27 @@ namespace WpfApp1
 
             using (TextWriter sw = new StreamWriter("E:\\files.csv"))
             {
-                string strData = "No";
+                int strData = 0;
                 float floatData = 324.563F;//Note it's a float not string
                 sw.WriteLine("{0},{1}", strData, floatData.ToString("F2"));
                 
-
+               
 
             }
-            this.Close();
+            //this.Close();
+            using (StreamReader sr = new StreamReader("E:\\files1.csv"))
+            {
+                String line = sr.ReadToEnd();
+                Console.WriteLine(line);
+
+                Console.ReadLine();
+            }
         }
+       
+
     }
 
+    
 
    
 
